@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Secure Access</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root {
+    --primary: #0ea5e9;
+    --primary-glow: rgba(14,165,233,0.55);
+    --bg-dark: #0b1120;
+    --glass: rgba(255,255,255,0.06);
+}
+
+/* PAGE */
+body {
+    margin: 0;
+    height: 100vh;
+    background: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* BACKGROUND GLOW */
+body::before {
+    content: "";
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+    filter: blur(90px);
+    opacity: 0.55;
+    top: -120px;
+    right: -120px;
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(56,189,248,0.35), transparent 75%);
+    filter: blur(100px);
+    opacity: 0.45;
+    bottom: -100px;
+    left: -100px;
+    z-index: 0;
+}
+
+/* LOGIN CARD */
+.login-card {
+    width: 380px;
+    padding: 3rem 2.4rem;
+    border-radius: 22px;
+    background: var(--glass);
+    backdrop-filter: blur(22px);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.45),
+                0 0 45px rgba(14,165,233,0.28);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    animation: fadeUp 0.7s ease;
+}
+
+/* TITLE */
+.login-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2.3rem;
+    color: var(--primary);
+    letter-spacing: -0.4px;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    transition: 0.25s;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    text-align: center;
+    box-sizing: border-box;
+
+}
+
+input:focus {
+    border-color: var(--primary);
+    background: rgba(255,255,255,0.15);
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(14,165,233,0.45);
+}
+
+/* ERROR */
+#error {
+    margin-top: 1rem;
+    color: #fb7185;
+    font-size: 0.9rem;
+    display: none;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-card">
+    <div class="login-title">Secure Access</div>
+    <input type="password" id="password" placeholder="Enter access code">
+    <button onclick="validate()">Continue</button>
+    <div id="error">Incorrect access code</div>
+    <div id="note" style="margin-top: 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.7);">
+        Access code updates every 24 hours
+    </div>
+</div>
+
+
+<script>
+// Set your access password here:
+const ACCESS_CODE = "ACCESS-2025";
+
+const EXPIRATION_TIME = 3600000;
+
+function validate() {
+    const entered = document.getElementById("password").value;
+
+    if (entered === ACCESS_CODE) {
+        const expireAt = new Date().getTime() + EXPIRATION_TIME;
+        localStorage.setItem("authorized", "yes");
+        localStorage.setItem("expireAt", expireAt);
+        window.location.href = "index1.html";
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
+}
+
+// چک کردن انقضا هنگام ورود به صفحه
+document.addEventListener("DOMContentLoaded", () => {
+    const authorized = localStorage.getItem("authorized");
+    const expireAt = localStorage.getItem("expireAt");
+
+    if (authorized === "yes" && expireAt) {
+        if (new Date().getTime() > parseInt(expireAt)) {
+            localStorage.removeItem("authorized");
+            localStorage.removeItem("expireAt");
+        } else {
+            window.location.href = "index1.html";
+        }
+    }
+});
+</script>
+
+
+</body>
+</html>

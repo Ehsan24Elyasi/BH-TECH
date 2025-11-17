@@ -167,7 +167,7 @@ function validate() {
         const expireAt = new Date().getTime() + EXPIRATION_TIME;
         localStorage.setItem("authorized", "yes");
         localStorage.setItem("expireAt", expireAt);
-        window.location.href = "index1.html";
+        window.location.href = "index.html";
     } else {
         document.getElementById("error").style.display = "block";
     }
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.removeItem("authorized");
             localStorage.removeItem("expireAt");
         } else {
-            window.location.href = "index1.html";
+            window.location.href = "index.html";
         }
     }
 });

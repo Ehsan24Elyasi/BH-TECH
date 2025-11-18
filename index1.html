@@ -1236,7 +1236,7 @@ if (localStorage.getItem("authorized") !== "yes") {
         </div>
         <div class="client-card" data-client="region-waterloo">
             <div class="client-logo-container">
-                <img src="./watter-removebg-preview.png" alt="Region of Waterloo"  style="width: 60px; height: 60px;">
+                <img src="./watter.png" alt="Region of Waterloo"  style="width: 60px; height: 60px;" class="client-logo">
             </div>
         </div>
         <div class="client-card" data-client="national-bank">
@@ -1646,7 +1646,6 @@ document.querySelectorAll('.client-card').forEach(card=>{
             modalName.textContent = data.name;
             modalType.textContent = data.type;
             modalDesc.textContent = data.desc;
-            modalLogo.src = cardImg.src || '';
             modalLogo.alt = data.name;
 
             modal.classList.add('active');
@@ -1765,102 +1764,175 @@ document.querySelectorAll('.client-card').forEach(card=>{
             <h2 class="section-title">OEM & Platform Expertise</h2>
             <p class="section-subtitle">Multi-vendor skills allow us to support heterogeneous environments – ideal for operators and enterprises in Iran and the wider Middle East.</p>
         </div>
+<div class="oem-section">
 
-        <div class="oem-section">
-            <div class="oem-grid">
-                <div class="oem-category">
-                    <h4>Compute & Blade Platforms</h4>
-                    <ul>
-                        <li>Dell PowerEdge: R230, R440, R530, R630, R640, R730xd, R740xd, XE9680</li>
-                        <li>HPE ProLiant: DL360, DL380, DL585</li>
-                        <li>Cisco UCS: B200 M4, C240 M4</li>
-                        <li>IBM Power & xSeries: 520, 570, 770, AS/400e and others</li>
-                    </ul>
-                </div>
+    <!-- OEM LOGOS - Muted Corporate -->
+    <div class="oem-logos">
+        <img src="./dell-removebg-preview.png" alt="Dell">
+        <img src="./HP.png" alt="HPE">
+        <img src="./cisco-removebg-preview.png" alt="Cisco">
+        <img src="./ibm-removebg-preview.png" alt="IBM">
+        <img src="./IMG_5143-removebg-preview.png" >
+        <img src="./IMG_5144-removebg-preview.png" >
+        <img src="./IMG_5143-removebg-preview.png" >
+        <img src="./IMG_5145-removebg-preview.png" >
 
-                <div class="oem-category">
-                    <h4>Storage Platforms</h4>
-                    <ul>
-                        <li>EMC Data Domain, Unity, EqualLogic</li>
-                        <li>Dell Compellent SC-series</li>
-                        <li>IBM V5000, MD-series</li>
-                        <li>NetApp, HPE 3PAR</li>
-                    </ul>
-                </div>
+    </div>
 
-                <div class="oem-category">
-                    <h4>Legacy & Specialized</h4>
-                    <ul>
-                        <li>Sun Fire V240, V490</li>
-                        <li>IBM AS/400e</li>
-                        <li>Liquid-cooled AI servers (Dell XE9680)</li>
-                        <li>High-density GPU platforms</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- OEM GRID -->
+    <div class="oem-grid">
+        <div class="oem-category">
+            <h4>Compute & Blade Platforms</h4>
+            <ul>
+                <li>Dell PowerEdge: R230, R440, R530, R630, R640, R730xd, R740xd, XE9680</li>
+                <li>HPE ProLiant: DL360, DL380, DL585</li>
+                <li>Cisco UCS: B200 M4, C240 M4</li>
+                <li>IBM Power & xSeries: 520, 570, 770, AS/400e and others</li>
+            </ul>
+        </div>
 
-<div class="threeD-section">
-    <h4 class="threeD-title">3D Interactive Model</h4>
+        <div class="oem-category">
+            <h4>Storage Platforms</h4>
+            <ul>
+                <li>EMC Data Domain, Unity, EqualLogic</li>
+                <li>Dell Compellent SC-series</li>
+                <li>IBM V5000, MD-series</li>
+                <li>NetApp, HPE 3PAR</li>
+            </ul>
+        </div>
 
-    <model-viewer 
-        src="./cpu.glb"
-        alt="3D CPU Model"
-        auto-rotate
-        rotation-per-second="30deg"
-        interaction-prompt="none"
-        shadow-intensity="1"
-        class="threeD-model">
-    </model-viewer>
+        <div class="oem-category">
+            <h4>Legacy & Specialized</h4>
+            <ul>
+                <li>Sun Fire V240, V490</li>
+                <li>IBM AS/400e</li>
+                <li>Liquid-cooled AI servers (Dell XE9680)</li>
+                <li>High-density GPU platforms</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3D MODEL SECTION -->
+    <div class="threeD-section">
+        <h4 class="threeD-title">CPU 3D Design by BH TECH</h4>
+
+        <model-viewer
+            id="cpu-model"
+            src="./cpu.glb"
+            auto-rotate
+            auto-rotate-delay="0"
+            rotation-per-second="18deg"
+            camera-controls
+            interaction-prompt="none"
+            disable-zoom
+            exposure="1.3"
+            shadow-intensity="1"
+            environment-image="neutral"
+            style="
+                width: 100%;
+                height: 260px;
+                border-radius: 24px;
+                overflow: hidden;
+                background: #020617;
+            "
+        ></model-viewer>
+    </div>
+
 </div>
 
-<style>
-.threeD-section {
-    margin-top: 3rem;
-    padding: 2.5rem;
-    border-radius: 24px;
-    background: rgba(15, 23, 42, 0.55);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(14, 165, 233, 0.18);
-    box-shadow: 0 15px 40px rgba(14, 165, 233, 0.12);
-    transition: all 0.4s ease;
-}
-
-.threeD-section:hover {
-    border-color: rgba(14, 165, 233, 0.8);
-    box-shadow: 0 25px 70px rgba(14, 165, 233, 0.25);
-    transform: translateY(-6px);
-}
-
-.threeD-title {
-    color: rgba(14, 165, 233, 1);
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.3px;
-}
-
-.threeD-model {
-    width: 100%;
-    min-height: 380px;
-    max-height: 600px;
-    border-radius: 20px;
-    background: linear-gradient(
-        135deg,
-        rgba(14, 165, 233, 0.08),
-        rgba(6, 182, 212, 0.05)
-    );
-    border: 1px solid rgba(14, 165, 233, 0.15);
-        transform: rotateX(1deg) rotateY(0deg);  /* X: بالا-پایین، Y: چپ-راست */
-
-}
-</style>
-
-<!-- افزودن اسکریپت model-viewer -->
+<!-- MODEL VIEWER SCRIPT -->
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 
+<style>
 
-        </div>
+    /* OEM LOGOS */
+    .oem-logos {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 20px 0 40px 0;
+        flex-wrap: wrap;
+        opacity: 0.95;
+    }
+
+    .oem-logos img {
+        height: 62px;
+        filter: grayscale(50%);
+        opacity: 0.55;
+        transition: all .3s ease;
+    }
+
+    .oem-logos img:hover {
+        filter: grayscale(0);
+        opacity: 1;
+        transform: scale(1.07);
+    }
+
+    /* OEM GRID */
+    .oem-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 32px;
+        margin-bottom: 2rem;
+    }
+
+    .oem-category {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 24px;
+        border-radius: 18px;
+        border: 1px solid rgba(14, 165, 233, 0.15);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: all 0.35s ease;
+    }
+
+    .oem-category:hover {
+        transform: translateY(-6px);
+        border-color: rgba(14, 165, 233, 0.45);
+        box-shadow: 0 18px 50px rgba(14,165,233,0.22);
+    }
+
+    .oem-category h4 {
+        margin-bottom: 12px;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #0ea5e9;
+    }
+
+    .oem-category ul {
+        padding-left: 18px;
+        line-height: 1.65;
+        opacity: 0.9;
+    }
+
+    /* 3D SECTION */
+    .threeD-section {
+        margin-top: 3rem;
+        padding: 2.5rem;
+        border-radius: 24px;
+        background: rgba(15, 23, 42, 0.55);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(14, 165, 233, 0.18);
+        box-shadow: 0 15px 40px rgba(14, 165, 233, 0.12);
+        transition: all 0.4s ease;
+    }
+
+    .threeD-section:hover {
+        border-color: rgba(14, 165, 233, 0.8);
+        box-shadow: 0 25px 70px rgba(14, 165, 233, 0.25);
+        transform: translateY(-6px);
+    }
+
+    .threeD-title {
+        color: rgba(14, 165, 233, 1);
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.3px;
+    }
+
+</style>
+
     </section>
 
     <!-- Operating Under Sanctions -->

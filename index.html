@@ -674,17 +674,6 @@ body[data-theme="light"] .about-background {
             gap: 0.5rem;
         }
 
-        .chart-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
         .bar-chart {
             display: flex;
             flex-direction: column;
@@ -864,8 +853,8 @@ body[data-theme="light"] .about-background {
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
+            width: 90px;
+            height: 90px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             border-radius: 16px;
             display: flex;
@@ -1305,14 +1294,15 @@ body[data-theme="light"] .hamburger span {
     <div class="nav-container">
         <div class="logo">BH TECH</div>
 
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#metrics">Metrics</a></li>
-            <li><a href="#industries">Industries</a></li>
-            <li><a href="#clients">Clients</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#metrics">Metrics</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#fibre">Fibre Supply</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
 
         <!-- Hamburger Menu -->
         <button id="menuToggle" class="hamburger">
@@ -2337,6 +2327,102 @@ document.querySelectorAll('.client-card').forEach(card=>{
             </div>
         </div>
     </section>
+
+<!-- ================= OPTICAL FIBRE SUPPLY DIVISION ================= -->
+<section id="fibre" style="padding-top: 9rem;">
+    <div class="section-header">
+        <h2 class="section-title">Optical Fibre Supply Division</h2>
+        <p class="section-subtitle">
+            Direct factory-to-site supply of ITU-T compliant singlemode & multimode optical fibre reels · 
+            Tier-1 manufacturers (China & India) · 25+ million km annual capacity
+        </p>
+    </div>
+
+    <!-- Intro – دقیقاً مثل بخش About یا Sanctions -->
+    <div class="about-section">
+        <div class="about-grid">
+            <div class="about-card">
+                <h4>Division Overview</h4>
+                <p>
+                    BH TECH CONSULTING INC. operates a dedicated optical fibre supply chain in direct partnership with leading manufacturers in China and India. We deliver raw optical fibre reels (not finished cable) to telecom operators, cable manufacturers, national backbone projects, and private networks across the UAE, GCC, Africa, and Asia.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Available Fibre Types – دقیقاً با همان service-card های سایت -->
+    <div class="section-header" style="margin-top: 5rem;">
+        <h3 class="section-title" style="font-size: 2.4rem;">Available Fibre Specifications</h3>
+    </div>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">G.652</div>
+            <h3 class="service-title">ITU-T G.652.D</h3>
+            <p class="service-desc">Standard singlemode fibre · The global benchmark for long-haul, metro, and access networks (1310/1550 nm).</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #0ea5e9, #22d3ee);">G.657</div>
+            <h3 class="service-title">ITU-T G.657.A1 / A2</h3>
+            <p class="service-desc">Bend-insensitive & ultra bend-insensitive singlemode · Ideal for FTTx, drop cables, and tight routing environments.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">OM2</div>
+            <h3 class="service-title">OM2 Multimode</h3>
+            <p class="service-desc">50/125 μm legacy multimode · 850 nm optimized for campus and short-reach LAN backbones.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">OM3</div>
+            <h3 class="service-title">OM3 Multimode</h3>
+            <p class="service-desc">Laser-optimized 50/125 μm · Supports 10G/40G/100G up to 300–400 m at 850 nm.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">OM4</div>
+            <h3 class="service-title">OM4 Multimode</h3>
+            <p class="service-desc">Premium laser-optimized multimode · Extended reach for 100G+ hyperscale and enterprise data centers.</p>
+        </div>
+    </div>
+
+    <!-- Quality Assurance + Logistics – دقیقاً با همان chart-card دو ستونه -->
+    <div class="metrics-container" style="margin-top: 5rem;">
+        <div class="chart-card">
+            <h3 class="chart-title">
+                <span class="chart-icon">QA</span> Quality Assurance & Testing
+            </h3>
+            <div style="margin-top: 1.5rem; color: var(--gray); line-height: 1.9;">
+                • Full geometry inspection & attenuation testing (1310/1550 nm SM · 850/1300 nm MM)<br>
+                • OTDR trace reports & reel-end verification available<br>
+                • Certificate of Conformance + batch test data with every shipment<br>
+                • Optional third-party lab validation
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h3 class="chart-title">
+                <span class="chart-icon">Global</span> Global Logistics & Capacity
+            </h3>
+            <div style="margin-top: 1.5rem; color: var(--gray); line-height: 1.9;">
+                • Direct factory shipment from China & India<br>
+                • Custom reel lengths: 25 km | 50 km | 100 km | 250 km+<br>
+                • Delivery to UAE, GCC, Iraq, Africa, Central Asia<br><br>
+                <strong style="color: var(--primary); font-size: 1.2rem;">
+                    Annual capacity: 15 million km singlemode · 10 million km multimode
+                </strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA – دقیقاً مثل بقیه دکمه‌های سایت -->
+    <div style="text-align: center; margin: 4.5rem 0 2rem;">
+        <a href="#contact" class="btn btn-primary" style="padding: 1.2rem 3.2rem; font-size: 1.1rem;">
+            Request Fibre Quotation →
+        </a>
+    </div>
+</section>
 
     <!-- CONTACT SECTION WITH FORM -->
     <div class="contact-section" id="contact">

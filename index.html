@@ -236,14 +236,17 @@ body[data-theme="light"] footer {
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
+font-weight: 700;
+letter-spacing: 0.06em;
+font-size: 0.95rem;
+text-transform: uppercase;
         }
 
+        .nav-left {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
         .nav-links {
             display: flex;
             gap: 2.5rem;
@@ -853,8 +856,8 @@ body[data-theme="light"] .about-background {
         }
 
         .service-icon {
-            width: 90px;
-            height: 90px;
+            width: 120px;
+            height: 120px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             border-radius: 16px;
             display: flex;
@@ -1252,6 +1255,19 @@ body[data-theme="light"] .hamburger span {
         display: flex;
     }
 
+    .logo-pill {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+        }
     .nav-links {
         position: fixed;
         top: 70px;
@@ -1285,24 +1301,256 @@ body[data-theme="light"] .hamburger span {
         gap: 14px;
     }
 }
+    .nav-left {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
 
+.logo-pill {
+width: 36px;
+height: 36px;
+border-radius: 12px;
+background: linear-gradient(135deg, var(--primary), var(--accent));
+display: flex;
+align-items: center;
+justify-content: center;
+color: #fff;
+font-weight: 700;
+font-size: 18px;
+box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+.brand-name {
+font-weight: 700;
+letter-spacing: 0.06em;
+font-size: 0.95rem;
+text-transform: uppercase;
+}
+
+.hero-location {
+    margin-top: 1.5rem;       /* فاصله از دکمه‌ها */
+    font-size: 0.9rem;        /* کمی کوچکتر از متن اصلی */
+    color: rgba(255, 255, 255, 0.8);  /* رنگ سفید نیمه شفاف */
+    text-align: center;       /* وسط‌چین */
+    font-weight: 400;         /* وزن معمولی */
+}
+
+/* اگر بخوای روی موبایل هم خوب باشه */
+@media (max-width: 768px) {
+    .hero-location {
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+}
+
+/* ===================== DROPDOWN MENU – کاملاً سازگار با تم سایت ===================== */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.dropbtn .arrow {
+    font-size: 0.75em;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropbtn .arrow {
+    transform: rotate(180deg);
+}
+
+/* منوی دراپ‌دان */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: rgba(15, 23, 42, 0.95);                     /* دارک مود */
+    backdrop-filter: blur(20px);
+    min-width: 240px;
+    border-radius: 20px;
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    padding: 14px 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+/* فلش مثلثی بالای منو */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 14px;
+    height: 14px;
+    background: rgba(15, 23, 42, 0.95);
+    border-left: 1px solid rgba(14, 165, 233, 0.25);
+    border-top: 1px solid rgba(14, 165, 233, 0.25);
+    z-index: -1;
+}
+
+/* نمایش منو */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* آیتم‌های منو */
+.dropdown-menu a {
+    display: block;
+    padding: 12px 28px;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(14, 165, 233, 0.15);
+    color: #0ea5e9;
+    padding-left: 34px;
+}
+
+/* ===================== LIGHT MODE – کاملاً هماهنگ با سایت ===================== */
+body[data-theme="light"] .dropdown-menu {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12) !important;
+    backdrop-filter: blur(20px);
+}
+
+body[data-theme="light"] .dropdown-menu::before {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+body[data-theme="light"] .dropdown-menu a {
+    color: #0f172a !important;
+}
+
+body[data-theme="light"] .dropdown-menu a:hover {
+    background: rgba(14, 165, 233, 0.12) !important;
+    color: #0284c7 !important;
+}
+
+/* ===================== موبایل – با کلیک کار کنه ===================== */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        transform: none !important;
+        left: 0;
+        background: rgba(15, 23, 42, 0.98);
+        border-radius: 16px;
+        margin: 8px 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .dropdown-menu::before {
+        display: none;
+    }
+
+    body[data-theme="light"] .dropdown-menu {
+        background: #ffffff !important;
+        border: 1px solid rgba(0,0,0,0.1) !important;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: none !important;
+    }
+}
+
+/* موبایل – کاملاً بدون فضای خالی وقتی بسته‌ست */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        transform: none !important;
+        left: 0;
+        background: rgba(15, 23, 42, 0.98);
+        border-radius: 16px;
+        margin: 10px 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(14, 165, 233, 0.25);
+        
+        /* مهم‌ترین قسمت: وقتی بسته‌ست اصلاً تو صفحه نباشه */
+        max-height: 0;
+        padding: 0 !important;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* وقتی باز شد */
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;    /* عدد بزرگ کافیه، محتوا تعیین‌کننده‌ست */
+        padding: 14px 0 !important;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* فلش مثلثی رو تو موبایل مخفی کن */
+    .dropdown-menu::before {
+        display: none;
+    }
+
+    /* لایت مود موبایل */
+    body[data-theme="light"] .dropdown-menu {
+        background: #ffffff !important;
+        border: 1px solid rgba(0,0,0,0.12) !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
+    }
+
+    body[data-theme="light"] .dropdown.active .dropdown-menu {
+        background: #ffffff !important;
+    }
+}
     </style>
 </head>
 <body>
     <div class="grain"></div>
 <nav id="navbar">
     <div class="nav-container">
-        <div class="logo">BH TECH</div>
+        <div class="nav-left">
+            <div class="logo-pill">BH</div>
+            <div class="brand-name">BH TECH CONSULTING INC</div>
+        </div>
 
-<ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#metrics">Metrics</a></li>
-    <li><a href="#industries">Industries</a></li>
-    <li><a href="#clients">Clients</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#fibre">Fibre Supply</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
+        <ul class="nav-links">
+<li class="dropdown">
+    <a href="#services" class="dropbtn">Services <span class="arrow">▼</span></a>
+    <div class="dropdown-menu">
+        <a href="#services">Services Overview</a>
+        <a href="#fibre">Fibre Supply</a>
+        <a href="#datacenter">Data Center</a>
+    </div>
+</li>
+
+            <!-- بقیه لینک‌ها -->
+            <li><a href="#metrics">Metrics</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#clients">Clients</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
         <!-- Hamburger Menu -->
         <button id="menuToggle" class="hamburger">
@@ -1319,8 +1567,9 @@ body[data-theme="light"] .hamburger span {
         <div class="hero-bg"></div>
         <div class="grid-overlay"></div>
         <div class="hero-content">
-            <h1>Western-Grade Data Center<br>Maintenance for the Middle East</h1>
-            <p class="subtitle">BH Tech Consulting Inc. provides hardware maintenance and TPM services for mission-critical servers, storage and network infrastructure. Experience built on Canadian telecom, government, banking and enterprise environments – ready to be deployed in Iran and the GCC.</p>
+            <h1>Mission-Critical Fibre & Data Center Services for the Middle East & Africa</h1>
+            <p class="subtitle">BH Tech Consulting Inc. connects tier-1 optical fibre factories in China & India with carriers and integrators in the UAE, GCC, Africa and Central Asia, while also providing Western-grade data center maintenance based on Canadian telecom experience.</p>
+            
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">
                     Request a Technical Meeting →
@@ -1332,6 +1581,7 @@ body[data-theme="light"] .hamburger span {
                 <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
         </div>
+        
     </section>
 
     <!-- Operational Snapshot Section -->
@@ -1363,6 +1613,223 @@ body[data-theme="light"] .hamburger span {
         </div>
     </div>
 
+        <section id="services">
+        <div class="section-header">
+            <h2 class="section-title">What We Do</h2>
+            <p class="section-subtitle">BH Tech operates in two tightly connected domains: bulk optical fibre supply and data center / network infrastructure services. We help operators, ISPs, system integrators and large enterprises secure reliable fibre, then keep their critical infrastructure up and running.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3 class="service-title">Server & Compute Maintenance</h3>
+                <p class="service-desc">Diagnosis and repair of x86 and RISC systems, including Dell PowerEdge, HPE ProLiant, Cisco UCS, IBM Power and xSeries, and legacy AS/400. Work includes system-board replacements, CPU reseating and replacement, DIMM troubleshooting, RAID card issues and PSU failures.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💾</div>
+                <h3 class="service-title">Storage & Backup Systems</h3>
+                <p class="service-desc">Maintenance for enterprise storage arrays and backup appliances such as EMC Data Domain, Unity, EqualLogic, Compellent SC-series, V5000 and MD-series. Focus on disks, I/O backplanes, controllers, NVRAM, cache batteries and SPS/UPS components affecting data availability.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3 class="service-title">Data Center TPM Contracts</h3>
+                <p class="service-desc">Post-warranty maintenance contracts (beyond OEM 3–5 year terms) with defined SLAs, response times and spare-parts strategy tailored to the realities of Iran and GCC markets. Options include NBD, 8×5 and 24×7×365 coverage, with 4-hour response where required.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= OPTICAL FIBRE SUPPLY DIVISION ================= -->
+<section id="fibre" style="padding-top: 9rem;">
+    <div class="section-header">
+        <h2 class="section-title">Optical Fibre Supply Division</h2>
+        <p class="section-subtitle">
+            Direct factory-to-site supply of ITU-T compliant singlemode & multimode optical fibre reels · 
+            Tier-1 manufacturers (China & India) · 25+ million km annual capacity
+        </p>
+    </div>
+
+    <!-- Intro – دقیقاً مثل بخش About یا Sanctions -->
+    <div class="about-section">
+        <div class="about-grid">
+            <div class="about-card">
+                <h4>Division Overview</h4>
+                <p>
+                    BH TECH CONSULTING INC. operates a dedicated optical fibre supply chain in direct partnership with leading manufacturers in China and India. We deliver raw optical fibre reels (not finished cable) to telecom operators, cable manufacturers, national backbone projects, and private networks across the UAE, GCC, Africa, and Asia.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Available Fibre Types – دقیقاً با همان service-card های سایت -->
+    <div class="section-header" style="margin-top: 5rem;">
+        <h3 class="section-title" style="font-size: 2.4rem;">Available Fibre Specifications</h3>
+    </div>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">G.652</div>
+            <h3 class="service-title">ITU-T G.652.D</h3>
+            <p class="service-desc">Standard singlemode fibre · The global benchmark for long-haul, metro, and access networks (1310/1550 nm).</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #0ea5e9, #22d3ee);">G.657</div>
+            <h3 class="service-title">ITU-T G.657.A1 / A2</h3>
+            <p class="service-desc">Bend-insensitive & ultra bend-insensitive singlemode · Ideal for FTTx, drop cables, and tight routing environments.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">OM2</div>
+            <h3 class="service-title">OM2 Multimode</h3>
+            <p class="service-desc">50/125 μm legacy multimode · 850 nm optimized for campus and short-reach LAN backbones.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">OM3</div>
+            <h3 class="service-title">OM3 Multimode</h3>
+            <p class="service-desc">Laser-optimized 50/125 μm · Supports 10G/40G/100G up to 300–400 m at 850 nm.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">OM4</div>
+            <h3 class="service-title">OM4 Multimode</h3>
+            <p class="service-desc">Premium laser-optimized multimode · Extended reach for 100G+ hyperscale and enterprise data centers.</p>
+        </div>
+    </div>
+
+    <!-- Quality Assurance + Logistics – دقیقاً با همان chart-card دو ستونه -->
+    <div class="metrics-container" style="margin-top: 5rem;">
+        <div class="chart-card">
+            <h3 class="chart-title">
+                <span class="chart-icon">QA</span> Quality Assurance & Testing
+            </h3>
+            <div style="margin-top: 1.5rem; color: var(--gray); line-height: 1.9;">
+                • Full geometry inspection & attenuation testing (1310/1550 nm SM · 850/1300 nm MM)<br>
+                • OTDR trace reports & reel-end verification available<br>
+                • Certificate of Conformance + batch test data with every shipment<br>
+                • Optional third-party lab validation
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h3 class="chart-title">
+                <span class="chart-icon">Global</span> Global Logistics & Capacity
+            </h3>
+            <div style="margin-top: 1.5rem; color: var(--gray); line-height: 1.9;">
+                • Direct factory shipment from China & India<br>
+                • Custom reel lengths: 25 km | 50 km | 100 km | 250 km+<br>
+                • Delivery to UAE, GCC, Iraq, Africa, Central Asia<br><br>
+                <strong style="color: var(--primary); font-size: 1.2rem;">
+                    Annual capacity: 15 million km singlemode · 10 million km multimode
+                </strong>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 4.5rem 0 2rem;">
+        <a href="#contact" class="btn btn-primary" style="padding: 1.2rem 3.2rem; font-size: 1.1rem;">
+            Request Fibre Quotation →
+        </a>
+    </div>
+</section>
+
+<!-- ================= DATA CENTER & NETWORK INFRASTRUCTURE SERVICES ================= -->
+<section id="datacenter" style="padding-top: 9rem;">
+    <div class="section-header">
+        <h2 class="section-title">Data Center & Network Infrastructure Services</h2>
+        <p class="section-subtitle">
+            Beyond fibre, BH Tech supports operators and enterprises with field-proven data center services based on real incident work in Canadian telecom, government, banking and research environments.
+        </p>
+    </div>
+
+    <div class="services-grid">
+        <!-- Server & Compute Maintenance -->
+        <div class="service-card">
+            <div class="service-icon">Server</div>
+            <h3 class="service-title">Server & Compute Maintenance</h3>
+            <ul class="service-desc" style="list-style: none; padding: 0; margin: 1.2rem 0 0;">
+                <li style="padding-left: 1.6rem; position: relative; margin-bottom: 0.8rem; color: var(--gray);">
+                    Diagnosis and repair of Dell PowerEdge, HPE ProLiant, Cisco UCS, IBM Power/xSeries and similar
+                </li>
+                <li style="padding-left: 1.6rem; position: relative; margin-bottom: 0.8rem; color: var(--gray);">
+                    System-board replacements, CPU reseating, BOSS/RAID card swaps and firmware alignment
+                </li>
+                <li style="padding-left: 1.6rem; position: relative; color: var(--gray);">
+                    DIMM troubleshooting and memory upgrades
+                </li>
+            </ul>
+        </div>
+
+        <!-- Storage & RAID -->
+        <div class="service-card">
+            <div class="service-icon">Storage</div>
+            <h3 class="service-title">Storage & RAID</h3>
+            <ul class="service-desc" style="list-style: none; padding: 0; margin: 1.2rem 0 0;">
+                <li style="padding-left: 1.6rem; position: relative; margin-bottom: 0.8rem; color: var(--gray);">
+                    Replacement and configuration of RAID controllers, shelves and JBODs
+                </li>
+                <li style="padding-left: 1.6rem; position: relative; margin-bottom: 0.8rem; color: var(--gray);">
+                    Disk replacement and rebuild supervision under vendor procedures
+                </li>
+                <li style="padding-left: 1.6rem; position: relative; color: var(--gray);">
+                    Support for enterprise arrays in coordination with client storage teams
+                </li>
+            </ul>
+        </div>
+
+        <!-- Network & Edge -->
+        <div class="service-card">
+            <div class="service-icon">Network</div>
+            <h3 class="service-title">Network & Edge</h3>
+            <ul class="service-desc" style="list-style: none; padding: 0; margin: 1.2rem 0 0;">
+                <li style="padding-left: 1.6rem; position: relative; margin-bottom: 0.8rem; color: var(--gray);">
+                    Installation and basic turn-up of switches, routers and optical modules
+                </li>
+                <li style="padding-left: 1.6rem; position: relative; margin-bottom: 0.8rem; color: var(--gray);">
+                    Structured cabling at rack level, patch management and labelling
+                </li>
+                <li style="padding-left: 1.6rem; position: relative; color: var(--gray);">
+                    Work coordinated with client NOC / engineering teams
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Field Experience Snapshot -->
+    <div class="snapshot-section" style="margin-top: 5rem;">
+        <div class="snapshot-header">
+            <h3 class="snapshot-title">Field Experience Snapshot</h3>
+        </div>
+
+        <div class="snapshot-grid">
+            <div class="snapshot-card">
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="padding-left: 1.6rem; position: relative; margin-bottom: 1rem; color: var(--gray);">
+                        Critical incidents handled in tier-1 Canadian telecom and enterprise environments (via OEM/TPM partners)
+                    </li>
+                    <li style="padding-left: 1.6rem; position: relative; margin-bottom: 1rem; color: var(--gray);">
+                        Work performed on AI research clusters and high-density compute for universities
+                    </li>
+                    <li style="padding-left: 1.6rem; position: relative; color: var(--gray);">
+                        Hands-on replacement of critical components under strict change-management windows
+                    </li>
+                </ul>
+            </div>
+
+            <div class="snapshot-card">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Regional Delivery Model</h3>
+                <p style="color: var(--gray); line-height: 1.8;">
+                    For operators and enterprises in the <strong>UAE, GCC and Africa</strong>, we offer <strong>remote advisory + on-site engineering</strong> through trusted local partners — bringing Canadian-grade procedures and discipline to your data centers.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Metrics -->
     <div class="stats-grid" id="metrics">
         <div class="stat-card">
             <div class="stat-number">54</div>
@@ -1964,32 +2431,6 @@ document.querySelectorAll('.client-card').forEach(card=>{
     });
 </script>
 
-    <section id="services">
-        <div class="section-header">
-            <h2 class="section-title">What We Do</h2>
-            <p class="section-subtitle">Full-stack data center maintenance and TPM (Third-Party Maintenance) services for servers, storage, and supporting infrastructure.</p>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3 class="service-title">Server & Compute Maintenance</h3>
-                <p class="service-desc">Diagnosis and repair of x86 and RISC systems, including Dell PowerEdge, HPE ProLiant, Cisco UCS, IBM Power and xSeries, and legacy AS/400. Work includes system-board replacements, CPU reseating and replacement, DIMM troubleshooting, RAID card issues and PSU failures.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">💾</div>
-                <h3 class="service-title">Storage & Backup Systems</h3>
-                <p class="service-desc">Maintenance for enterprise storage arrays and backup appliances such as EMC Data Domain, Unity, EqualLogic, Compellent SC-series, V5000 and MD-series. Focus on disks, I/O backplanes, controllers, NVRAM, cache batteries and SPS/UPS components affecting data availability.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">📋</div>
-                <h3 class="service-title">Data Center TPM Contracts</h3>
-                <p class="service-desc">Post-warranty maintenance contracts (beyond OEM 3–5 year terms) with defined SLAs, response times and spare-parts strategy tailored to the realities of Iran and GCC markets. Options include NBD, 8×5 and 24×7×365 coverage, with 4-hour response where required.</p>
-            </div>
-        </div>
-    </section>
 
     <section id="industries">
         <div class="section-header">
@@ -2254,7 +2695,7 @@ document.querySelectorAll('.client-card').forEach(card=>{
     <section id="about">
         <div class="section-header">
             <h2 class="section-title">About BH Tech Consulting Inc.</h2>
-            <p class="section-subtitle">A field-engineering driven company built around Western-grade practices and a mission to raise the standard of data center maintenance across Iran and the GCC.</p>
+            <p class="section-subtitle">BH Tech Consulting Inc. is a Canadian-based company focused on bridging Western-grade engineering practices with high-capacity manufacturing in Asia. We work directly with optical fibre factories in China and India and with trusted maintenance partners in the Middle East and Africa. </p>
         </div>
 
         <div class="about-section">
@@ -2328,130 +2769,67 @@ document.querySelectorAll('.client-card').forEach(card=>{
         </div>
     </section>
 
-<!-- ================= OPTICAL FIBRE SUPPLY DIVISION ================= -->
-<section id="fibre" style="padding-top: 9rem;">
-    <div class="section-header">
-        <h2 class="section-title">Optical Fibre Supply Division</h2>
-        <p class="section-subtitle">
-            Direct factory-to-site supply of ITU-T compliant singlemode & multimode optical fibre reels · 
-            Tier-1 manufacturers (China & India) · 25+ million km annual capacity
-        </p>
-    </div>
 
-    <!-- Intro – دقیقاً مثل بخش About یا Sanctions -->
-    <div class="about-section">
-        <div class="about-grid">
-            <div class="about-card">
-                <h4>Division Overview</h4>
-                <p>
-                    BH TECH CONSULTING INC. operates a dedicated optical fibre supply chain in direct partnership with leading manufacturers in China and India. We deliver raw optical fibre reels (not finished cable) to telecom operators, cable manufacturers, national backbone projects, and private networks across the UAE, GCC, Africa, and Asia.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Available Fibre Types – دقیقاً با همان service-card های سایت -->
-    <div class="section-header" style="margin-top: 5rem;">
-        <h3 class="section-title" style="font-size: 2.4rem;">Available Fibre Specifications</h3>
-    </div>
-
-    <div class="services-grid">
-        <div class="service-card">
-            <div class="service-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">G.652</div>
-            <h3 class="service-title">ITU-T G.652.D</h3>
-            <p class="service-desc">Standard singlemode fibre · The global benchmark for long-haul, metro, and access networks (1310/1550 nm).</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon" style="background: linear-gradient(135deg, #0ea5e9, #22d3ee);">G.657</div>
-            <h3 class="service-title">ITU-T G.657.A1 / A2</h3>
-            <p class="service-desc">Bend-insensitive & ultra bend-insensitive singlemode · Ideal for FTTx, drop cables, and tight routing environments.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">OM2</div>
-            <h3 class="service-title">OM2 Multimode</h3>
-            <p class="service-desc">50/125 μm legacy multimode · 850 nm optimized for campus and short-reach LAN backbones.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">OM3</div>
-            <h3 class="service-title">OM3 Multimode</h3>
-            <p class="service-desc">Laser-optimized 50/125 μm · Supports 10G/40G/100G up to 300–400 m at 850 nm.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">OM4</div>
-            <h3 class="service-title">OM4 Multimode</h3>
-            <p class="service-desc">Premium laser-optimized multimode · Extended reach for 100G+ hyperscale and enterprise data centers.</p>
-        </div>
-    </div>
-
-    <!-- Quality Assurance + Logistics – دقیقاً با همان chart-card دو ستونه -->
-    <div class="metrics-container" style="margin-top: 5rem;">
-        <div class="chart-card">
-            <h3 class="chart-title">
-                <span class="chart-icon">QA</span> Quality Assurance & Testing
-            </h3>
-            <div style="margin-top: 1.5rem; color: var(--gray); line-height: 1.9;">
-                • Full geometry inspection & attenuation testing (1310/1550 nm SM · 850/1300 nm MM)<br>
-                • OTDR trace reports & reel-end verification available<br>
-                • Certificate of Conformance + batch test data with every shipment<br>
-                • Optional third-party lab validation
-            </div>
-        </div>
-
-        <div class="chart-card">
-            <h3 class="chart-title">
-                <span class="chart-icon">Global</span> Global Logistics & Capacity
-            </h3>
-            <div style="margin-top: 1.5rem; color: var(--gray); line-height: 1.9;">
-                • Direct factory shipment from China & India<br>
-                • Custom reel lengths: 25 km | 50 km | 100 km | 250 km+<br>
-                • Delivery to UAE, GCC, Iraq, Africa, Central Asia<br><br>
-                <strong style="color: var(--primary); font-size: 1.2rem;">
-                    Annual capacity: 15 million km singlemode · 10 million km multimode
-                </strong>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA – دقیقاً مثل بقیه دکمه‌های سایت -->
-    <div style="text-align: center; margin: 4.5rem 0 2rem;">
-        <a href="#contact" class="btn btn-primary" style="padding: 1.2rem 3.2rem; font-size: 1.1rem;">
-            Request Fibre Quotation →
-        </a>
-    </div>
-</section>
 
     <!-- CONTACT SECTION WITH FORM -->
-    <div class="contact-section" id="contact">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle" style="margin-bottom: 2rem;">To schedule a technical meeting or review of your existing data center infrastructure:</p>
-        
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" class="form-control" placeholder="Tell us about your infrastructure needs..." required></textarea>
-            </div>
-            
-            <button type="submit" class="btn btn-primary submit-btn">
-                Send Message →
-            </button>
-        </form>
+<div class="contact-section" id="contact">
+    <h2 class="section-title">Contact &amp; Requests</h2>
+    <p class="section-subtitle" style="margin-bottom: 2rem;">
+        Tell us whether you’re interested in <strong>fibre supply</strong>,
+        <strong>data center services</strong>, or both. We’ll respond with a targeted proposal instead of generic brochures.
+    </p>
+    
+    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+        </div>
 
-        <p style="color: var(--gray); margin-top: 2rem; font-size: 0.95rem; font-style: italic;">Full ticket history, certifications and references available on request.</p>
-    </div>
+        <div class="form-group">
+            <label for="company">Company &amp; Role</label>
+            <input type="text" id="company" name="company" class="form-control" placeholder="Company, job title">
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+971 ...">
+        </div>
+        
+        <div class="form-group">
+            <label for="region">Region / Country</label>
+            <input type="text" id="region" name="region" class="form-control" placeholder="UAE, Angola, Iraq, etc.">
+        </div>
+
+        <div class="form-group">
+            <label for="interest">What are you interested in?</label>
+            <select id="interest" name="interest" class="form-control">
+                <option>Fibre Supply</option>
+                <option>Data Center Services</option>
+                <option>Both</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Short description of your requirement</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Volumes, timelines, platforms, or any details you can share." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary submit-btn">
+            Send Message →
+        </button>
+    </form>
+
+    <p style="color: var(--gray); margin-top: 2rem; font-size: 0.95rem; font-style: italic;">
+        Full ticket history, certifications and references available on request.<br>
+        For direct communication, you can also reach us at: <strong>fibre@bhclientportal.com</strong> or <strong>info@bhclientportal.com</strong>.
+    </p>
+</div>
+
 
     <footer>
         <p style="font-size: 1rem; font-weight: 600;">&copy; 2025 – BH Tech Consulting Inc. · Data Center Maintenance & TPM Services</p>
@@ -2676,6 +3054,15 @@ const navLinks = document.querySelector(".nav-links");
 menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("active");
     navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.classList.toggle('active');
+        }
+    });
 });
 </script>
 

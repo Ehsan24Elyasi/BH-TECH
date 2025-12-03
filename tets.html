@@ -1,172 +1,715 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BH TECH – Optical Fibre Supply Division</title>
+<meta charset="UTF-8" />
+<title>BH Tech Consulting Inc. – Fibre & Data Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta
+name="description"
+content="BH Tech Consulting Inc. provides bulk optical fibre supply and data center services for operators and enterprises in the Middle East, Africa and Central Asia."
+/>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #f4f6f8;
-            color: #222;
-            line-height: 1.6;
-        }
+<!-- Optional Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        /* Header */
-        header {
-            background: #0a3d62;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
+<style>
+:root {
+--bg: #f5f7fb;
+--bg-alt: #ffffff;
+--primary: #0077c8;
+--primary-dark: #005da0;
+--accent: #00a6a6;
+--text-main: #111827;
+--text-muted: #4b5563;
+--border-soft: #e5e7eb;
+--max-width: 1040px;
+--radius-lg: 18px;
+--radius-sm: 10px;
+--shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-            font-weight: 700;
-        }
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
 
-        header p {
-            margin-top: 5px;
-            font-size: 16px;
-            opacity: 0.9;
-        }
+html {
+scroll-behavior: smooth;
+}
 
-        /* Section layout */
-        .section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
+body {
+font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+background: radial-gradient(circle at top left, #e0f2fe 0, #eef2ff 35%, #f9fafb 100%);
+color: var(--text-main);
+line-height: 1.6;
+}
 
-        .section h2 {
-            font-size: 26px;
-            margin-bottom: 10px;
-            color: #0a3d62;
-            border-left: 5px solid #0a3d62;
-            padding-left: 10px;
-        }
+a {
+color: inherit;
+text-decoration: none;
+}
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            grid-gap: 20px;
-        }
+header {
+position: sticky;
+top: 0;
+z-index: 20;
+backdrop-filter: blur(18px);
+background: rgba(248, 250, 252, 0.82);
+border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
 
-        .product-card {
-            padding: 20px;
-            border-radius: 8px;
-            background: #f7f9fb;
-            border: 1px solid #dce2e6;
-            transition: 0.2s;
-        }
+.nav {
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 0.6rem 1.2rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
 
-        .product-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-        }
+.nav-left {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
 
-        .product-card h3 {
-            margin-top: 0;
-            color: #0a3d62;
-        }
+.logo-pill {
+width: 36px;
+height: 36px;
+border-radius: 12px;
+background: linear-gradient(135deg, var(--primary), var(--accent));
+display: flex;
+align-items: center;
+justify-content: center;
+color: #fff;
+font-weight: 700;
+font-size: 18px;
+box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #0a3d62;
-            color: white;
-            margin-top: 40px;
-        }
+.brand-name {
+font-weight: 700;
+letter-spacing: 0.06em;
+font-size: 0.95rem;
+text-transform: uppercase;
+}
 
-        @media(max-width: 600px) {
-            header h1 { font-size: 26px; }
-            .section { padding: 15px; }
-        }
-    </style>
+.nav-links {
+display: flex;
+align-items: center;
+gap: 1.3rem;
+font-size: 0.9rem;
+}
+
+.nav-links a {
+color: var(--text-muted);
+font-weight: 500;
+}
+
+.nav-links a:hover {
+color: var(--primary-dark);
+}
+
+.nav-cta {
+padding: 0.45rem 0.95rem;
+border-radius: 999px;
+background: var(--primary);
+color: #fff !important;
+font-weight: 600;
+box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.nav-cta:hover {
+background: var(--primary-dark);
+}
+
+/* Layout */
+main {
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 1.8rem 1.2rem 3rem;
+}
+
+section {
+margin: 2.5rem 0;
+}
+
+.hero {
+margin-top: 1.4rem;
+display: grid;
+grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+gap: 1.8rem;
+align-items: center;
+}
+
+.hero-badge {
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+padding: 0.22rem 0.7rem;
+border-radius: 999px;
+background: rgba(15, 23, 42, 0.05);
+color: #4b5563;
+font-size: 0.78rem;
+font-weight: 500;
+margin-bottom: 0.65rem;
+}
+
+.hero-title {
+font-size: clamp(2.2rem, 4vw, 2.8rem);
+line-height: 1.1;
+margin-bottom: 0.9rem;
+letter-spacing: -0.03em;
+}
+
+.hero-sub {
+color: var(--text-muted);
+font-size: 0.98rem;
+max-width: 34rem;
+margin-bottom: 1.2rem;
+}
+
+.hero-ctas {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+margin-bottom: 1.1rem;
+}
+
+.btn-primary,
+.btn-ghost {
+border-radius: 999px;
+padding: 0.65rem 1.25rem;
+font-size: 0.9rem;
+font-weight: 600;
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+cursor: pointer;
+border: 1px solid transparent;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--primary), var(--accent));
+color: #fff;
+box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+}
+
+.btn-ghost {
+background: rgba(255, 255, 255, 0.7);
+border-color: rgba(148, 163, 184, 0.6);
+color: var(--text-main);
+}
+
+.btn-ghost:hover {
+background: #fff;
+}
+
+.hero-meta {
+font-size: 0.78rem;
+color: #6b7280;
+}
+
+.hero-card {
+background: rgba(255, 255, 255, 0.92);
+border-radius: var(--radius-lg);
+padding: 1.1rem 1.3rem;
+box-shadow: var(--shadow-soft);
+border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.hero-card-title {
+font-size: 0.95rem;
+font-weight: 600;
+margin-bottom: 0.25rem;
+}
+
+.hero-card-stat {
+font-size: 1.4rem;
+font-weight: 700;
+color: var(--primary-dark);
+margin-bottom: 0.3rem;
+}
+
+.hero-card-note {
+font-size: 0.8rem;
+color: var(--text-muted);
+}
+
+/* Generic section */
+.section-label {
+text-transform: uppercase;
+letter-spacing: 0.14em;
+font-size: 0.72rem;
+color: #6b7280;
+margin-bottom: 0.25rem;
+font-weight: 600;
+}
+
+.section-title {
+font-size: 1.45rem;
+margin-bottom: 0.4rem;
+}
+
+.section-sub {
+font-size: 0.92rem;
+color: var(--text-muted);
+max-width: 40rem;
+margin-bottom: 1.1rem;
+}
+
+.cards-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 1rem;
+}
+
+.card {
+background: var(--bg-alt);
+border-radius: var(--radius-lg);
+padding: 1rem 1.1rem;
+border: 1px solid var(--border-soft);
+box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.card h3 {
+font-size: 1rem;
+margin-bottom: 0.35rem;
+}
+
+.card p {
+font-size: 0.9rem;
+color: var(--text-muted);
+margin-bottom: 0.5rem;
+}
+
+.card ul {
+list-style: disc;
+padding-left: 1.1rem;
+font-size: 0.86rem;
+color: var(--text-muted);
+}
+
+.two-col {
+display: grid;
+grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.3fr);
+gap: 1.25rem;
+}
+
+.list-columns {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 0.8rem 1.5rem;
+font-size: 0.9rem;
+}
+
+.list-columns ul {
+list-style: disc;
+padding-left: 1.1rem;
+color: var(--text-muted);
+}
+
+/* Contact */
+.contact-grid {
+display: grid;
+grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+gap: 1.5rem;
+}
+
+form {
+display: grid;
+gap: 0.6rem;
+}
+
+label {
+font-size: 0.82rem;
+font-weight: 500;
+color: #374151;
+}
+
+input, textarea, select {
+width: 100%;
+padding: 0.55rem 0.7rem;
+border-radius: 10px;
+border: 1px solid var(--border-soft);
+font-family: inherit;
+font-size: 0.88rem;
+background: #fff;
+}
+
+textarea {
+min-height: 110px;
+resize: vertical;
+}
+
+footer {
+border-top: 1px solid rgba(148, 163, 184, 0.4);
+padding: 1.3rem 1.2rem 2rem;
+text-align: center;
+font-size: 0.78rem;
+color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+.hero {
+grid-template-columns: minmax(0, 1fr);
+}
+.hero-card {
+order: -1;
+}
+.nav-links {
+display: none; /* keep it simple for now */
+}
+header {
+position: static;
+}
+main {
+padding-top: 1.2rem;
+}
+}
+</style>
 </head>
 
 <body>
-
 <header>
-    <h1>BH TECH – Optical Fibre Supply Division</h1>
-    <p>Global sourcing, QA verification, and supply of premium singlemode & multimode optical fibre</p>
+<div class="nav">
+<div class="nav-left">
+<div class="logo-pill">BH</div>
+<div class="brand-name">BH TECH CONSULTING INC.</div>
+</div>
+<nav class="nav-links">
+<a href="#top">Home</a>
+<a href="#fibre">Fibre Supply</a>
+<a href="#datacenter">Data Center</a>
+<a href="#industries">Industries</a>
+<a href="#about">About</a>
+<a href="#contact" class="nav-cta">Contact</a>
+</nav>
+</div>
 </header>
 
-<section class="section">
-    <h2>About Our Fibre Division</h2>
-    <p>
-        BH TECH CONSULTING INC. has expanded into global optical fibre sourcing and distribution,
-        partnering directly with high-capacity manufacturers in China and India.  
-        We supply raw optical fibre reels to telecom operators, cable manufacturers, infrastructure projects,
-        and private organizations across the UAE, Africa, and Asia.
-    </p>
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+<div>
+<div class="hero-badge">
+<span>Fibre Supply · Data Center Services</span>
+</div>
+<h1 class="hero-title">Mission-Critical Fibre & Data Center Services for the Middle East & Africa</h1>
+<p class="hero-sub">
+BH Tech Consulting Inc. connects <strong>tier-1 optical fibre factories in China &amp; India</strong>
+with carriers and integrators in the <strong>UAE, GCC, Africa and Central Asia</strong>, while also
+providing <strong>Western-grade d center maintenance</strong> based on Canadian telecom experience.
+</p>
+<div class="hero-ctas">
+<a href="#contact" class="btn-primary">Request Fibre Quotation →</a>
+<a href="#contact" class="btn-ghost">Request Technical Meeting →</a>
+</div>
+<div class="hero-meta">
+Based in Canada · Operating with partners in UAE, GCC, Africa and Central Asia
+</div>
+</div>
+
+<aside class="hero-card">
+<div class="hero-card-title">Annual Fibre Capacity via BH Tech</div>
+<div class="hero-card-stat">15M km SM · 10M km MM</div>
+<div class="hero-card-note">
+Singlemode (G.652D, G.657A1, G.657A2) and multimode (OM2, OM3, OM4)
+supplied directly from certified factories in China &amp; India.
+</div>
+</aside>
 </section>
 
-<section class="section">
-    <h2>Available Fibre Types</h2>
+<!-- WHAT WE DO -->
+<section>
+<div class="section-label">Overview</div>
+<h2 class="section-title">What We Do</h2>
+<p class="section-sub">
+BH Tech operates in two tightly connected domains:
+<strong>bulk optical fibre supply</strong> and
+<strong>data center / network infrastructure services</strong>.
+We help operators, ISPs, system integrators and large enterprises secure reliable fibre,
+then keep their critical infrastructure up and running.
+</p>
 
-    <div class="product-grid">
+<div class="cards-grid">
+<div class="card">
+<h3>Optical Fibre Supply</h3>
+<p>
+Direct partnership with certified factories in China &amp; India to support carrier-grade projects.
+</p>
+<ul>
+<li>G.652D, G.657A1, G.657A2 singlemode</li>
+<li>OM2, OM3, OM4 multimode</li>
+<li>Custom reel lengths &amp; labelling</li>
+<li>Technical parameter sheets &amp; OTDR on request</li>
+</ul>
+</div>
 
-        <div class="product-card">
-            <h3>ITU-T G.652.D</h3>
-            <p>Standard singlemode fibre for long-distance and metropolitan networks.</p>
-        </div>
-
-        <div class="product-card">
-            <h3>ITU-T G.657.A1</h3>
-            <p>Bend-insensitive fibre for drop networks, FTTX and high-density deployments.</p>
-        </div>
-
-        <div class="product-card">
-            <h3>ITU-T G.657.A2</h3>
-            <p>Ultra bend-insensitive fibre with superior macro-bend performance.</p>
-        </div>
-
-        <div class="product-card">
-            <h3>OM2 Multimode</h3>
-            <p>850nm optimized multimode fibre for short-reach LAN backbone applications.</p>
-        </div>
-
-        <div class="product-card">
-            <h3>OM3 Multimode</h3>
-            <p>Laser-optimized 850nm multimode fibre for 10G/40G/100G networks.</p>
-        </div>
-
-        <div class="product-card">
-            <h3>OM4 Multimode</h3>
-            <p>High-performance multimode fibre for extended 100G reach and premium data centers.</p>
-        </div>
-
-    </div>
-</section>
-<section class="section">
-    <h2>Quality Assurance</h2>
-    <p>
-        All fibre supplied undergoes full geometry inspection, attenuation testing at 1310/1550 nm,
-        batch verification, and optional OTDR trace reporting.  
-        Quality reports can be shared with clients prior to shipment.
-    </p>
+<div class="card">
+<h3>Data Center &amp; Network Services</h3>
+<p>
+Field-proven maintenance and incident response for x86 &amp; RISC platforms
+in telecom and enterprise environments.
+</p>
+<ul>
+<li>Dell, HPE, Cisco UCS, IBM Power/xSeries and more</li>
+<li>System boards, PSUs, RAID, DIMMs, NICs</li>
+<li>Hands-on work in Canadian carrier &amp; enterprise sites</li>
+<li>Now focused on UAE, GCC &amp; Africa through partners</li>
+</ul>
+</div>
+</div>
 </section>
 
-<section class="section">
-    <h2>Global Logistics</h2>
-    <p>
-        We ship directly from manufacturing plants in China and India to ports in UAE, Africa, and Asia.
-        Custom reel lengths (50km, 100km, 250km) are available.
-        Annual supply capacity: <strong>15 million km singlemode</strong> + <strong>10 million km multimode</strong>.
-    </p>
+<!-- FIBRE SUPPLY -->
+<section id="fibre">
+<div class="section-label">Optical Fibre</div>
+<h2 class="section-title">Optical Fibre Supply – Global Capacity &amp; Models</h2>
+<p class="section-sub">
+BH Tech provides <strong>bulk optical fibre</strong> directly from partner factories in
+<strong>China and India</strong>, with a commercial structure tailored for carriers, ISPs,
+cable manufacturers and integrators.
+</p>
+
+<div class="two-col">
+<div class="card">
+<h3>Available Fibre Types</h3>
+<p><strong>Singlemode</strong></p>
+<ul>
+<li>ITU-T G.652D – standard singlemode</li>
+<li>ITU-T G.657A1 – bend-insensitive, compatible with G.652D</li>
+<li>ITU-T G.657A2 – ultra bend-insensitive for high-density and last-mile</li>
+</ul>
+<p style="margin-top:0.7rem;"><strong>Multimode</strong></p>
+<ul>
+<li>OM2 – 50/125 µm multimode fibre</li>
+<li>OM3 – laser-optimised multimode for 10G+</li>
+<li>OM4 – extended-reach multimode for 40G/100G links</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Capacity &amp; Logistics</h3>
+<ul>
+<li><strong>Annual capacity via BH Tech:</strong><br>
+up to 15 million km singlemode &amp; 10 million km multimode</li>
+<li><strong>Custom reel lengths:</strong> 25 km, 50 km, 100 km, 250 km+ as per design</li>
+<li><strong>Labelling &amp; packing:</strong> factory or customer brand, export-ready packaging</li>
+<li><strong>Delivery regions:</strong> UAE, GCC, Iraq, Africa, Central Asia (others on request)</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="margin-top:1rem;">
+<h3>Quality Assurance &amp; Documentation</h3>
+<ul>
+<li>Factory certificates and technical parameter sheets for each model</li>
+<li>OTDR traces and test reports provided for production batches on request</li>
+<li>Batch numbers and drum labels aligned with customer tracking systems</li>
+<li>Option to align with client-specific acceptance criteria for attenuation, geometry and PMD</li>
+</ul>
+<p style="margin-top:0.7rem; font-size:0.88rem; color:var(--text-muted);">
+To discuss volume pricing, annual frameworks or project-based supply, contact us to
+<strong>request a fibre quotation or OTDR samples.</strong>
+</p>
+</div>
 </section>
+
+<!-- DATA CENTER -->
+<section id="datacenter">
+<div class="section-label">Data Center</div>
+<h2 class="section-title">Data Center &amp; Network Infrastructure Services</h2>
+<p class="section-sub">
+Beyond fibre, BH Tech supports operators and enterprises with
+<strong>field-proven data center services</strong> based on real incident work in Canadian telecom,
+government, banking and research environments.
+</p>
+
+<div class="cards-grid">
+<div class="card">
+<h3>Server &amp; Compute Maintenance</h3>
+<ul>
+<li>Diagnosis and repair of Dell PowerEdge, HPE ProLiant, Cisco UCS, IBM Power/xSeries and similar</li>
+<li>System-board replacements, CPU reseating, BOSS/RAID card swaps and firmware alignment</li>
+<li>DIMM troubleshooting and memory upgrades</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Storage &amp; RAID</h3>
+<ul>
+<li>Replacement and configuration of RAID controllers, shelves and JBODs</li>
+<li>Disk replacement and rebuild supervision under vendor procedures</li>
+<li>Support for enterprise arrays in coordination with client storage teams</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Network &amp; Edge</h3>
+<ul>
+<li>Installation and basic turn-up of switches, routers and optical modules</li>
+<li>Structured cabling at rack level, patch management and labelling</li>
+<li>Work coordinated with client NOC / engineering teams</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="margin-top:1rem;">
+<h3>Field Experience Snapshot</h3>
+<ul>
+<li>Critical incidents handled in tier-1 Canadian telecom and enterprise environments (via OEM/TPM partners)</li>
+<li>Work performed on AI research clusters and high-density compute for universities</li>
+<li>Hands-on replacement of critical components under strict change-management windows</li>
+</ul>
+<p style="margin-top:0.7rem; font-size:0.88rem; color:var(--text-muted);">
+For operators and enterprises in the UAE, GCC and Africa, we offer
+<strong>remote advisory + on-site engineering</strong> through local partners.
+</p>
+</div>
+</section>
+
+<!-- INDUSTRIES & REGIONS -->
+<section id="industries">
+<div class="section-label">Focus</div>
+<h2 class="section-title">Industries &amp; Regions We Serve</h2>
+<p class="section-sub">
+BH Tech focuses on customers where fibre reliability and data center uptime directly affect revenue and reputation.
+</p>
+
+<div class="two-col">
+<div>
+<h3 style="font-size:1rem; margin-bottom:0.4rem;">Industries</h3>
+<div class="list-columns">
+<ul>
+<li>Telecom &amp; ISPs – long-haul, metro and FTTx projects; POP and edge DCs</li>
+<li>Cloud &amp; Hosting Providers – local cloud, colocation and managed service environments</li>
+</ul>
+<ul>
+<li>Finance &amp; Banking – high-availability data centers and DR sites</li>
+<li>Retail &amp; E-commerce – national chains with centralised infrastructure</li>
+</ul>
+<ul>
+<li>Education &amp; Research – universities and research labs with compute clusters</li>
+</ul>
+</div>
+</div>
+
+<div>
+<h3 style="font-size:1rem; margin-bottom:0.4rem;">Regions</h3>
+<ul style="list-style:disc; padding-left:1.1rem; font-size:0.9rem; color:var(--text-muted);">
+<li><strong>Core markets:</strong> UAE, Saudi Arabia, Qatar, Oman, Bahrain, Kuwait</li>
+<li><strong>Expansion markets:</strong> South Africa, Angola, other African states, Iraq and Central Asia</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="section-label">About</div>
+<h2 class="section-title">About BH Tech Consulting Inc.</h2>
+<p class="section-sub">
+BH Tech Consulting Inc. is a Canadian-based company focused on
+<strong>bridging Western-grade engineering practices with high-capacity manufacturing in Asia</strong>.
+We work directly with optical fibre factories in China and India and with trusted maintenance partners
+in the Middle East and Africa.
+</p>
+
+<div class="card">
+<ul>
+<li>Registered and operating from Canada, with international project focus</li>
+<li>Combination of engineering background (real field work on enterprise hardware) and commercial experience in wholesale &amp; logistics</li>
+<li>Lean structure – decisions are fast, communication is direct, and projects are handled by people who understand both technical and commercial sides</li>
+</ul>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="section-label">Contact</div>
+<h2 class="section-title">Contact &amp; Requests</h2>
+<p class="section-sub">
+Tell us whether you’re interested in <strong>fibre supply</strong>,
+<strong>data center services</strong>, or both. We’ll respond with a targeted proposal instead of generic brochures.
+</p>
+
+<div class="contact-grid">
+<div class="card">
+<!-- You can wire this form to Formspree, Getform, etc. -->
+<form>
+<div>
+<label for="name">Name</label>
+<input id="name" type="text" placeholder="Full name" />
+</div>
+<div>
+<label for="company">Company &amp; Role</label>
+<input id="company" type="text" placeholder="Company, job title" />
+</div>
+<div>
+<label for="email">Email</label>
+<input id="email" type="email" placeholder="you@company.com" />
+</div>
+<div>
+<label for="phone">Phone / WhatsApp</label>
+<input id="phone" type="tel" placeholder="+971 ..." />
+</div>
+<div>
+<label for="region">Region / Country</label>
+<input id="region" type="text" placeholder="UAE, Angola, Iraq, etc." />
+</div>
+<div>
+<label for="interest">What are you interested in?</label>
+<select id="interest">
+<option>Fibre Supply</option>
+<option>Data Center Services</option>
+<option>Both</option>
+</select>
+</div>
+<div>
+<label for="message">Short description of your requirement</label>
+<textarea id="message" placeholder="Volumes, timelines, platforms, or any details you can share."></textarea>
+</div>
+<button type="submit" class="btn-primary">Submit Enquiry</button>
+</form>
+</div>
+
+<div>
+<div class="card">
+<h3>Direct Email</h3>
+<p style="font-size:0.9rem; color:var(--text-muted);">
+For direct communication, you can also reach us at:
+</p>
+<ul style="list-style:none; padding-left:0; font-size:0.88rem; color:var(--text-muted); margin-top:0.4rem;">
+<li><strong>Fibre enquiries:</strong> fibre@bhclientportal.com</li>
+<li><strong>General &amp; data center:</strong> info@bhclientportal.com</li>
+</ul>
+<p style="margin-top:0.7rem; font-size:0.86rem; color:var(--text-muted);">
+We typically respond within one business day with clarifying questions or a first proposal.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
 
 <footer>
-    © 2025 BH TECH CONSULTING INC. — Optical Fibre Supply Division
+© <span id="year"></span> BH Tech Consulting Inc. All rights reserved.
 </footer>
 
+<script>
+// Update year automatically
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
